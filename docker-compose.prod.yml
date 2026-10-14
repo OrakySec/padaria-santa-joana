@@ -2,7 +2,8 @@ version: '3.8'
 
 # Stack: padaria
 # Variáveis no Portainer:
-#   SITE_DOMAIN -> domínio sem https:// e sem barra, ex.: padariasantajoana.com.br (obrigatória)
+#   SITE_DOMAIN -> domínio sem https://, sem www, sem barra e SEM ESPAÇOS, ex.: padariasantajoana.com.br (obrigatória)
+#                  O site responde em SITE_DOMAIN e em www.SITE_DOMAIN (o DNS do www precisa apontar pra VPS).
 #   SITE_IMAGE  -> imagem (opcional; use pra rollback com a tag do hash do commit)
 
 services:
@@ -26,7 +27,7 @@ services:
       labels:
         - "traefik.enable=true"
         - "traefik.docker.network=YkaroNET"
-        - "traefik.http.routers.padaria-site.rule=Host(`${SITE_DOMAIN:?Defina SITE_DOMAIN}`)"
+        - "traefik.http.routers.padaria-site.rule=Host(`${SITE_DOMAIN:?Defina SITE_DOMAIN}`) || Host(`www.${SITE_DOMAIN}`)"
         - "traefik.http.routers.padaria-site.entrypoints=websecure"
         - "traefik.http.routers.padaria-site.tls.certresolver=letsencryptresolver"
         - "traefik.http.services.padaria-site.loadbalancer.server.port=80"
