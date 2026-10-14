@@ -1,0 +1,36 @@
+version: '3.8'
+
+# Stack: padaria
+# Variáveis no Portainer:
+#   SITE_DOMAIN -> domínio sem https:// e sem barra, ex.: padariasantajoana.com.br (obrigatória)
+#   SITE_IMAGE  -> imagem (opcional; use pra rollback com a tag do hash do commit)
+
+services:
+  site:
+    image: ${SITE_IMAGE:-ghcr.io/orakysec/padaria-santa-joana-site:latest}
+    networks:
+      - YkaroNET
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      update_config:
+        order: start-first
+        failure_action: rollback
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 64M
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=YkaroNET"
+        - "traefik.http.routers.padaria-site.rule=Host(`${SITE_DOMAIN:?Defina SITE_DOMAIN}`)"
+        - "traefik.http.routers.padaria-site.entrypoints=websecure"
+        - "traefik.http.routers.padaria-site.tls.certresolver=letsencryptresolver"
+        - "traefik.http.services.padaria-site.loadbalancer.server.port=80"
+
+networks:
+  YkaroNET:
+    external: true

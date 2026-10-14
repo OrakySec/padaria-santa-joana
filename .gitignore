@@ -1,0 +1,7 @@
+.claude/
+.env
+.DS_Store
+Thumbs.db
+
+# Fotos originais pesadas (~300MB) — o site usa só as versões otimizadas em hero/, produtos/ e sobre/
+assets/img/FOTOS IFOOD/

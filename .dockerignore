@@ -1,0 +1,10 @@
+.git
+.github
+.claude
+.gitignore
+.gitattributes
+.dockerignore
+Dockerfile
+docker-compose*.yml
+*.md
+assets/img/FOTOS IFOOD
