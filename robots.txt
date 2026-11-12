@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://padariasantajoana.com.br/sitemap.xml

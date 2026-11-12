@@ -1,6 +1,6 @@
 FROM nginx:1.27-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY index.html /usr/share/nginx/html/index.html
+COPY index.html favicon.ico apple-touch-icon.png robots.txt sitemap.xml /usr/share/nginx/html/
 COPY css /usr/share/nginx/html/css
 COPY js /usr/share/nginx/html/js
 COPY fonts /usr/share/nginx/html/fonts

@@ -4,7 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Padaria Santa Joana | Recife desde 1964</title>
-<meta name="description" content="Padaria Santa Joana - pães frescos, almoço e kit festa no Prado, Recife. Servindo com afeto desde 1964.">
+<meta name="description" content="Padaria Santa Joana no Prado, Recife: pães frescos, refeições e Coffee Break para empresas e eventos. Tradição desde 1964. Peça pelo WhatsApp ou iFood.">
+<link rel="canonical" href="https://padariasantajoana.com.br/">
+<meta name="theme-color" content="#C25131">
+
+<!-- Ícones (a logo que aparece na aba do navegador e nos resultados do Google).
+     O Google exige favicon com múltiplos de 48px (48, 96, 192...). -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/icon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/icon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Dados estruturados: nome do site + dados da padaria + logo (Google).
+     Sem aggregateRating de propósito: o Google não aceita nota "autodeclarada"
+     em LocalBusiness e pode penalizar o site. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://padariasantajoana.com.br/#website",
+      "url": "https://padariasantajoana.com.br/",
+      "name": "Padaria Santa Joana",
+      "alternateName": "Santa Joana",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://padariasantajoana.com.br/#padaria" }
+    },
+    {
+      "@type": "Bakery",
+      "@id": "https://padariasantajoana.com.br/#padaria",
+      "name": "Padaria Santa Joana",
+      "url": "https://padariasantajoana.com.br/",
+      "description": "Padaria no Prado, Recife: pães frescos, refeições e Coffee Break para empresas e eventos. Tradição desde 1964.",
+      "foundingDate": "1964",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://padariasantajoana.com.br/assets/icons/icon-192.png",
+        "width": 192,
+        "height": 192
+      },
+      "image": "https://padariasantajoana.com.br/assets/img/hero/hero-spread.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Estrada do Bongi, 1114 - Prado",
+        "addressLocality": "Recife",
+        "addressRegion": "PE",
+        "postalCode": "50830-260",
+        "addressCountry": "BR"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "06:30",
+          "closes": "19:30"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/padariasantajoana/",
+        "https://www.facebook.com/padariasantajoana/"
+      ]
+    }
+  ]
+}
+</script>
+
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -147,7 +213,7 @@
   </section>
 
   <!-- ===== DEPOIMENTOS ===== -->
-  <section class="testimonials" id="depoimentos">
+  <section class="testimonials" id="depoimentos" data-nosnippet>
     <div class="container">
       <span class="eyebrow center">Quem já provou</span>
       <h2 class="section-title center">O que dizem nossos clientes</h2>
