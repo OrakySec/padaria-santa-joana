@@ -75,4 +75,18 @@ document.addEventListener('DOMContentLoaded', () => {
     prevBtn?.addEventListener('click', () => scrollWrap(-1));
     nextBtn?.addEventListener('click', () => scrollWrap(1));
   });
+
+  // Conversão do Google Ads "Click Wpp": dispara no clique de QUALQUER link do
+  // WhatsApp (wa.me) — topo, produtos, localização, rodapé e botão flutuante.
+  // Os links abrem em nova aba, então a página não descarrega e o evento sai normal.
+  // (Não colocar esse evento solto no HTML: contaria uma conversão por visita.)
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="https://wa.me/"]');
+    if (!link || typeof gtag !== 'function') return;
+    gtag('event', 'conversion', {
+      send_to: 'AW-707403207/-_-ICLrMp7odEMe7qNEC',
+      value: 1.0,
+      currency: 'BRL'
+    });
+  });
 });
